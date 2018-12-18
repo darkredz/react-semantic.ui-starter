@@ -1,26 +1,57 @@
 {
-    "plugins": ["lodash",
-        [
-            "transform-runtime", {
-                "helpers": false,
-                "polyfill": false,
-                "regenerator": true,
-                "moduleName": "babel-runtime"
-            },
-        ],
-        "react-hot-loader/babel"
-    ],
-    "presets": ["es2015", "react", "stage-0"],
-    "env": {
-        "ssr": {
-            "plugins": [
-                ["babel-plugin-webpack-alias", {
-                    "config": "webpack_config/webpack.base.js"
-                }]
-            ]
-        },
-        "production": {
-            "presets": ["react-optimize"]
-        }
-    }
+	"plugins": [
+		["lodash", {"id": ["lodash"]}],
+		"syntax-dynamic-import",
+		[
+			"babel-plugin-styled-components",
+			{
+				"ssr": true
+			}
+		]
+	],
+	"presets": [
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": ["ie 10", "last 2 versions"]
+				}
+			}
+		],
+		"stage-0",
+		"react",
+		"flow"
+	],
+	"env": {
+		"production": {
+			"presets": ["react-optimize"]
+		},
+		"development": {
+			"plugins": ["react-hot-loader/babel", "dynamic-import-node"]
+		},
+		"test": {
+			"plugins": [
+				"dynamic-import-node",
+				[
+					"module-resolver",
+					{
+						"root": ["./"],
+						"alias": {
+							"actions": "./src/common/actions",
+							"api": "./src/common/api",
+							"app": "./src/common/app",
+							"components": "./src/common/components",
+							"containers": "./src/common/containers",
+							"reducers": "./src/common/reducers",
+							"routing": "./src/common/routing",
+							"selectors": "./src/common/selectors",
+							"styles": "./src/common/styles",
+							"images": "./static/images"
+						},
+						"extensions": [".js", ".jsx", ".json"]
+					}
+				]
+			]
+		}
+	}
 }

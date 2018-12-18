@@ -1,0 +1,26 @@
+[
+	{
+		"link": "https://github.com/Metnew/suicrux#whats-inside",
+		"icon": "settings",
+		"header": "What's inside?",
+		"desc": "Client, Server and Webpack libs and plugins"
+	},
+	{
+		"link": "https://github.com/Metnew/suicrux#semanticui--react--suir",
+		"icon": "paint brush",
+		"header": "Why semantic-ui-react?",
+		"desc": "Notes about SUIR. Why SUIR is a good (or bad) choise."
+	},
+	{
+		"link": "https://github.com/Metnew/suicrux#environment-variables",
+		"icon": "terminal",
+		"header": "ENV vars",
+		"desc": "Docs about ENV variables."
+	},
+	{
+		"link": "https://github.com/Metnew/suicrux#faq",
+		"icon": "question",
+		"header": "FAQ",
+		"desc": "Commonly asked questions."
+	}
+]
